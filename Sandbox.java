@@ -2,17 +2,15 @@ import java.util.Arrays;
 
 public class Sandbox {
     public static void main(String[] args) {
-        String[] fruits = {"Apple", "Orange", "Banana", "Coconut"};
+        String[] cars = new String[3];
 
-        //fruit[0] = "Pineapple";
+        cars[0] = "Camero";
+        cars[1] = "Corvette";
+        cars[2] = "Tesla";
 
-        //int numOfFruit =fruit.length;
 
-        //Arrays.sort(fruits);
-        Arrays.fill(fruits, "Pineapple");
-
-        for (String fruit : fruits) {
-            System.out.println(fruit);
+        for (String car:cars) {
+            System.out.println(car);
         }
     }
 }
