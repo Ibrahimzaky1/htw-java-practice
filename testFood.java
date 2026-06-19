@@ -1,19 +1,19 @@
 public class testFood {
     public static void main(String[] args) {
-        //food[] {refrigerator = new food[3];
+        food [] refregerator = new food[3];
 
-        food food1 = new food("pizza");
-        food food2 = new food("hamburger");
-        food food3 = new food("hotdog");
- 
-        food[] refrigerator = {food1, food2, food3};
+        food f1 = new food("Burger");
+        food f2 = new food("Hamburger");
+        food f3 = new food("Hotdog");
 
-        //refrigerator[0] = food1;
-        //refrigerator[1] = food2;
-        //refrigerator[2] = food3;
+        refregerator[0] = f1;
+        refregerator[1] = f2;
+        refregerator[2] = f3;
 
-        System.out.println(refrigerator[0].name);
-        System.out.println(refrigerator[1].name);
-        System.out.println(refrigerator[2].name);
+        for(food item: refregerator) {
+            System.out.println(item.name);
+        }
+
+
     }
 }
