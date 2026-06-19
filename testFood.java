@@ -1,6 +1,6 @@
 public class testFood {
     public static void main(String[] args) {
-        food[] {refrigerator = new food[3];
+        //food[] {refrigerator = new food[3];
 
         food food1 = new food("pizza");
         food food2 = new food("hamburger");
