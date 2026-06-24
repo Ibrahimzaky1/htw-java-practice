@@ -3,27 +3,20 @@ import java.util.Scanner;
 
 public class Sandbox {
      public static void main(String[] args) {
-        
-
-        try (Scanner scanner = new Scanner(System.in);) {
-            System.out.println("Enter a number: ");
-            int number = scanner.nextInt();
-            System.out.println(number);
+        try {
+            //getInt();
+            System.out.println(getInt());
         }
-
-        catch (InputMismatchException e) {
-            System.out.println("That wasn't a number!");
-        }
-
-        catch (ArithmeticException e) {
-            System.out.println("YOU CAN'T DIVIDE BY ZERO! ");
-        }
-
-        catch (Exception e) {
-            System.out.println("Something went wrong");
+        catch(NumberFormatException nfe) {
+            System.out.println("You can't turn a String into an Integer");
         }
         finally {
-            System.out.println("This always excecutes!");
+            System.out.println("This is the final code!");
         }
+     }
+
+     public static int getInt() {
+        int myInt = Integer.parseInt("1");
+        return myInt;
      }
 }
