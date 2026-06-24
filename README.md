@@ -3,10 +3,14 @@
 This repository contains my Java exercises and practice code from HTW Berlin.
 
 ## Files
-
-- `Punkt.java`
-- `TestPunkt.java`
+- `.gitignore`
+- `Cuboid.java`
+- `README.md`
+- `Rectangle`
 - `Sandbox.java`
+- `Test.java`
+- `food.java`
+- `testPunkt.java`
 
 ## Topics Covered
 
@@ -16,5 +20,4 @@ This repository contains my Java exercises and practice code from HTW Berlin.
 - Instance Methods
 - Static Variables
 - Constants
-- Object References
-- Git and GitHub
+- Arrays
