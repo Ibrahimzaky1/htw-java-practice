@@ -1,22 +1,34 @@
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 public class Sandbox {
-     public static void main(String[] args) {
-        try {
-            //getInt();
-            System.out.println(getInt());
+     public static double mittelwert(int[] arr) throws NullPointerException {
+        if (arr == null) {
+            throw new NullPointerException("Array ist null!");
         }
-        catch(NumberFormatException nfe) {
-            System.out.println("You can't turn a String into an Integer");
-        }
-        finally {
-            System.out.println("This is the final code!");
-        }
-     }
 
-     public static int getInt() {
-        int myInt = Integer.parseInt("1");
-        return myInt;
-     }
+        int sum = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+
+        return (double) sum / arr.length;
+    }
+
+    // Compares the averages of two arrays
+    public static boolean vergleich(int[] a, int[] b) {
+        if (mittelwert(a) == mittelwert(b)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static void main(String[] args) {
+
+        int[] x = {1, 2, 3};
+        int[] y = null;
+
+        boolean result = vergleich(x, y);
+
+        System.out.println(result);
+    }
 }
