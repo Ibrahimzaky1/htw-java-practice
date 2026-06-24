@@ -1,29 +1,15 @@
-import java.util.Scanner;
-
 public class Main {
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter Age: ");
-        int age = scan.nextInt();
 
-        try {
-            checkAge(age);
-        }
-        catch (Exception e) {
-            System.out.println("A problem occured" + e);
-        }
-        finally {
-            scan.close();
-        }
-        
+    public static void arrayPractice(int i) {
+        int array[] = new int[5];
 
-    }
-    static void checkAge(int age) throws AgeException {
-        if (age < 18) {
-            throw new AgeException("\n" + "You must be 18+ to sign up!");
+        if (i > 5) {
+            throw new ArrayIndexOutOfBoundsException(
+                "Hey, don't put indexes too high!");
         }
-        else {
-            System.out.println("You are signed up!");
-        }
+    } 
+
+    public static void main(String[] args){
+        arrayPractice(7);
     }
 }
