@@ -1,16 +1,16 @@
 public class Sandbox {
      public static void main(String[] args) {
         try {
-            int myInt = Integer.parseInt("h");
-            System.out.println("if an exception is thrown you won't see this message!");
+            getInt();
         }
-        catch (NumberFormatException | NullPointerException nfe) {
-            System.out.println("This can not be turned into an integer");
-        }
-        finally {
-            System.out.println("This is the finally block");
+        catch (Exception e) {
+            System.out.println("You can't turn a string into an integer");
         }
         System.out.println("End here");
-
     }
+
+    public static void getInt () {
+        int myInt = Integer.parseInt("pants");
+    }
+
 }
