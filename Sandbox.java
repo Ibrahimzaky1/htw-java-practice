@@ -1,15 +1,34 @@
-import java.io.IOException;
-
 public class Sandbox {
-     public static void main(String[] args) throws IOException {
-          arrayPractice(3);
-     }
+     public static double mittelwert(int[] arr) throws NullPointerException {
+        if (arr == null) {
+            throw new NullPointerException("Array is null!");
+        }
 
-     public static void arrayPractice(int i) {
-          int a[] = new int[5];
+        int sum = 0;
 
-          if (i < 0 ||i >= 5) {
-               throw new ArrayIndexOutOfBoundsException("Hey, don't put indexes too high");
-          }
-     }
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+
+        return (double) sum / arr.length;
+    }
+
+    // Compares the averages of two arrays
+    public static boolean vergleich(int[] a, int[] b) {
+        if (mittelwert(a) == mittelwert(b)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static void main(String[] args) {
+
+        int[] x = {1, 2, 3};
+        int[] y = Null;
+
+        boolean result = vergleich(x, y);
+
+        System.out.println(result);
+    }
 }
