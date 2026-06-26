@@ -2,33 +2,38 @@ import java.util.Scanner;
 
 public class Sandbox {
      public static void main(String[] args) {
-         Scanner scanner = new Scanner(System.in);
-         System.out.println("Enter amount to withdraw: ");
-         int withdrawAmount = scanner.nextInt();
-         int accountBlanace = 100;
+          Scanner scanner = new Scanner(System.in);
+          String userPassword = "OpenAI123";
+          
+          int attempts = 3;
 
-         try {
-          if (withdrawAmount < 0) {
-               throw new IllegalArgumentException(
-                    "withdawal amount can not be negative!");
+
+          while (attempts > 0) {
+               System.out.println("Enter your password: ");
+               String userInput = scanner.next();
+               try {
+                    if (userInput.equals(userPassword)) {
+                         System.out.println("Access granted");
+                         break;
+                    }
+                     
+                    else {
+                         attempts--;
+                         throw new IllegalArgumentException("Login failed");
+                    }
+                    
+                    
+               }
+               catch (IllegalArgumentException e) {
+                    System.out.println(e.getMessage());
+                    System.out.println("Attempts left: " + attempts);
+               }
           }
-          if (withdrawAmount > accountBlanace) {
-               throw new IllegalArgumentException(
-                    "Your withdraw amount is bigger than your account balance!");
+
+          if (attempts == 0) {
+               System.out.println("Too many failled attempts. Access blocked.");
           }
-          accountBlanace = accountBlanace - withdrawAmount;
-          System.out.println(accountBlanace);
-          System.out.println("Your current balance is" + accountBlanace);
-         }
-         catch(IllegalArgumentException iae) {
-          System.out.println(iae.getMessage());
-         }
-
-         finally {
-          System.out.println("Transaction attempt finished!");
-          scanner.close();
-         }
-
+          
 
      }
 }
