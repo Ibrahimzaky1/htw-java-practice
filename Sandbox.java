@@ -1,39 +1,21 @@
-import java.util.Scanner;
 
 public class Sandbox {
+
+     public static int[] initilize(int len) {
+          int[] temp = new int[len];
+
+          for (int i = 0; i < temp.length; i++) {
+               temp[i] = i;
+          }
+          return temp;
+     }
+
      public static void main(String[] args) {
-          Scanner scanner = new Scanner(System.in);
-          String userPassword = "OpenAI123";
-          
-          int attempts = 3;
+       int[] array = initilize(5);
 
-
-          while (attempts > 0) {
-               System.out.println("Enter your password: ");
-               String userInput = scanner.next();
-               try {
-                    if (userInput.equals(userPassword)) {
-                         System.out.println("Access granted");
-                         break;
-                    }
-                     
-                    else {
-                         attempts--;
-                         throw new IllegalArgumentException("Login failed");
-                    }
-                    
-                    
-               }
-               catch (IllegalArgumentException e) {
-                    System.out.println(e.getMessage());
-                    System.out.println("Attempts left: " + attempts);
-               }
-          }
-
-          if (attempts == 0) {
-               System.out.println("Too many failled attempts. Access blocked.");
-          }
-          
-
+       for (int i = 0;  i < array.length; i++) {
+          System.out.println(array[i]);
+       }
+       
      }
 }
