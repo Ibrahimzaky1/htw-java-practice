@@ -1,18 +1,23 @@
 
 public class Sandbox {
      public static void main(String[] args) {
-          int [] array = {22, 33, 44, 55};
-          int [] arrayCopy = new int[array.length];
+          int[] array = {22, 33, 44};
+          int[] arrayCopy = new int[array.length + 1];
 
-          arrayCopy = array;
           
           for (int i = 0; i < array.length; i++) {
-               array[i] = arrayCopy[i];
+               arrayCopy[i] = array[i];
           }
+
+          arrayCopy[arrayCopy.length-1] = 55;
 
           for (int i = 0; i < arrayCopy.length; i++) {
                System.out.println(arrayCopy[i]);
           }
-     }
 
+
+          for (int i = 0; i < array.length; i++) {
+               System.out.println(array[i]);
+          }
+     }
 }
