@@ -1,23 +1,26 @@
 
 public class Sandbox {
      public static void main(String[] args) {
-          int[] array = {22, 33, 44};
-          int[] arrayCopy = new int[array.length + 1];
+          int [] array = {9, 1, 8, 2, 7, 3, 6, 5, 4};
 
-          
-          for (int i = 0; i < array.length; i++) {
-               arrayCopy[i] = array[i];
-          }
+          insertionSort(array);
 
-          arrayCopy[arrayCopy.length-1] = 55;
-
-          for (int i = 0; i < arrayCopy.length; i++) {
-               System.out.println(arrayCopy[i]);
-          }
-
-
-          for (int i = 0; i < array.length; i++) {
-               System.out.println(array[i]);
+          for (int i: array) {
+               System.out.println(i + " ");
           }
      }
+
+     private static void insertionSort(int[] array) {
+          for(int i = 1; i < array.length; i++) {
+               int temp = array[i];
+               int j = i-1;
+
+               while (j >= 0 && array[j] > temp) {
+                    array[j+1] = array[j];
+                    j--;
+               }
+               array[j+1] = temp;
+          }
+     }
+        
 }
