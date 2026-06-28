@@ -1,21 +1,18 @@
 
 public class Sandbox {
-
-     public static int[] initilize(int len) {
-          int[] temp = new int[len];
-
-          for (int i = 0; i < temp.length; i++) {
-               temp[i] = i;
-          }
-          return temp;
-     }
-
      public static void main(String[] args) {
-       int[] array = initilize(5);
+          int [] array = {22, 33, 44, 55};
+          int [] arrayCopy = new int[array.length];
 
-       for (int i = 0;  i < array.length; i++) {
-          System.out.println(array[i]);
-       }
-       
+          arrayCopy = array;
+          
+          for (int i = 0; i < array.length; i++) {
+               array[i] = arrayCopy[i];
+          }
+
+          for (int i = 0; i < arrayCopy.length; i++) {
+               System.out.println(arrayCopy[i]);
+          }
      }
+
 }
