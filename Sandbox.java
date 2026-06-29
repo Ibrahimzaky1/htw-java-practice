@@ -1,33 +1,40 @@
+import java.util.Arrays;
 
 public class Sandbox {
-     public static void main(String[] args) {
+          public static void main(String[] args) {
+               int [] original = {1, 2, 3, 4, 5};
 
-          int [] ints = {1, 2, 4, 5, 7, 9, 11};
+               int [] biggerCopy = copy(original, 7);
+               int [] smallerCopy = copy(original, 3);
 
-         System.out.println(binarySearch(ints, 9));
-
-     }
-
-     private static int binarySearch(int[] numbers, int numberToFind) {
-          int low = 0;
-          int high = numbers.length - 1;
-
-          while (low <= high) {
-               int middlePosition = (low + high) / 2;
-               int middleNumber = numbers[middlePosition];
-               if (numberToFind == middleNumber) {
-                    return middlePosition;
+               System.out.println("Bigger array copy: ");
+               for (int i : biggerCopy) {
+                    System.out.println(i + "");
                }
-               if (numberToFind < middleNumber) {
-                    high = middlePosition - 1;
-               } else {
-                    low = middlePosition + 1;
+
+               System.out.println("Smaller array copy: ");
+               for (int i : smallerCopy) {
+                    System.out.println(i);
                }
           }
-          return -1;
-     }
 
-          
+          public static int[] copy(int [] original, int newLength) {
+               int [] copy = new int[newLength];
+
+               if (original.length <= newLength) {
+                    for (int i = 0; i < original.length; i++) {
+                         copy[i] = original[i];
+                    }
+               }
+               else {
+                    for (int i = 0; i < newLength; i++) {
+                         copy[i] = original[i];
+                    }
+               }
+               return copy;
+          }
+}
+
      /*           int [] array = {3, 5, 2, 6, 7, 1};
      
                insertionSort(array);
@@ -48,4 +55,27 @@ public class Sandbox {
                } */
 
 
-}
+/*      private static int binarySearch(int[] numbers, int numberToFind) {
+     
+          int low = 0;
+          int high = numbers.length - 1;
+
+          while (low <= high) {
+               int middlePosition  = (low + high) / 2;
+               int middleNumber = numbers[middlePosition];
+
+               if (numberToFind == middleNumber) {
+                    return middlePosition;
+               }
+               if (numberToFind < middleNumber) {
+                    high = middlePosition - 1;
+               }
+               else {
+                    low = middlePosition + 1;
+               }
+          }
+          return -1;
+     } */
+
+      
+
