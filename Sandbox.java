@@ -3,24 +3,21 @@ import java.util.Scanner;
 
 public class Sandbox {
      public static void main(String[] args) {
-          int [] originalArray = {1, 2, 3, 4, 5};
+          int [] array = {1, 2, 3, 4, 5, 6};
 
-          int [] smallerArray = remove(originalArray, 0);
+          int max = findMaximum(array);
 
-          for (int i : smallerArray) {
-               System.out.print(i + " ");
-          }
+          System.out.println("Maximum: " + max);
      }
-     public static int [] remove(int [] array, int index) {
-          int [] newArray = new int[array.length - 1];
 
-          for (int i = 0; i < index; i++) {
-               newArray[i] = array[i];
-          }
+     public static int findMaximum(int [] array) {
+          int max = array[0];
 
-          for (int i = index + 1; i < array.length; i++) {
-               newArray[i - 1] = array[i];
+          for (int i = 0; i < array.length; i++) {
+               if (array[i] > max) {
+                    max = array[i];
+               }
           }
-          return newArray;
+          return max;
      }
 }
