@@ -1,36 +1,26 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Sandbox {
-          public static void main(String[] args) {
-               int [] array1 = initilize(5);
+     public static void main(String[] args) {
+          int [] originalArray = {1, 2, 3, 4, 5};
 
-               int [] array2 = initilize(9);
+          int [] smallerArray = remove(originalArray, 0);
 
-               System.out.println("Array 1: ");
-               printArray(array1);
+          for (int i : smallerArray) {
+               System.out.print(i + " ");
+          }
+     }
+     public static int [] remove(int [] array, int index) {
+          int [] newArray = new int[array.length - 1];
 
-               System.out.println("Array 2: ");
-               printArray(array2);
-
+          for (int i = 0; i < index; i++) {
+               newArray[i] = array[i];
           }
 
-
-          public static int[] initilize (int length) {
-               int [] temp = new int[length];
-
-               for (int i = 0; i < temp.length; i++) {
-                    temp[i] = i;
-               }
-               return temp;
+          for (int i = index + 1; i < array.length; i++) {
+               newArray[i - 1] = array[i];
           }
-
-          public static void printArray(int [] array) {
-               for (int i : array) {
-                    System.out.print(i + " ");
-               }
-               System.out.println();
-          }
+          return newArray;
+     }
 }
-
-
-
