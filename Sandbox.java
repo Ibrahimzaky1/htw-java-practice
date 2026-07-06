@@ -3,21 +3,27 @@ import java.util.Scanner;
 
 public class Sandbox {
      public static void main(String[] args) {
-          int [] array = {1, 2, 3, 4, 5, 6};
+          Scanner scanner = new Scanner(System.in);
+          System.out.println("Give an index");
+          int userInput = scanner.nextInt();
 
-          int max = findMaximum(array);
+          int [] array = {1, 2, 3, 4, 5};
 
-          System.out.println("Maximum: " + max);
+          try {
+               int number = getElement(array, userInput);
+               System.err.println("index is: " + number);
+          }
+          catch(IndexOutOfBoundsException e) {
+               System.out.println("Invalid index!");
+          }
+          scanner.close();
      }
 
-     public static int findMaximum(int [] array) {
-          int max = array[0];
-
-          for (int i = 0; i < array.length; i++) {
-               if (array[i] > max) {
-                    max = array[i];
-               }
+     public static int getElement(int [] array, int index) {
+          if (index < 0 || index >= array.length) {
+               throw new IndexOutOfBoundsException();
           }
-          return max;
+          return array[index];
      }
 }
+             
