@@ -1,11 +1,27 @@
 public class Test {
     public static void main(String[] args) {
-        Rectangle r1 = new Rectangle(23, 34);
-        Cuboid c1 = new Cuboid(r1, 54);
+        char [] characters = {'a', 'b', 'c', 'b', 'd'};
+        ArrayWrapper wrapper = new ArrayWrapper(characters);
+        int index = wrapper.findFirstCharOccurenceIndex('b');
+        System.out.println("First occurence of b is at index: " + index);
+        boolean removed = wrapper.tryRemoveFirstCharOccurence('b');
+        System.out.println("After removing first b: " + removed);
+        printArray(wrapper.getInternalArray());
+        try {
+            wrapper.insertChart('x', 2);
+            System.out.println("After inserting x at index 2: ");
+            printArray(wrapper.getInternalArray());
+        }
+        catch(IndexOutOfBoundsException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public static void printArray(char[] array) {
 
-        System.out.println(r1.calcCircumference());
-        System.out.println(r1.calcArea());
-        System.out.println(c1.calcSumEdges());
-        System.out.println(c1.calcVolume());
+        for (char character : array) {
+            System.out.print(character + " ");
+        }
+
+        System.out.println();
     }
 }
